@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>體溫門禁系統</title>
+    <style type="text/css">
+        .header_in {
+            font-size: 50px;
+            width: 675px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .header_out {
+            width: 500px;
+            height: 100px;
+            margin: auto;
+            position: relative;
+        }
+
+        .white {
+            color: #ffffff;
+            font-family: monospace;
+        }
+
+        .orange {
+            color: #000000;
+            background-color: #ffa700;
+            border-radius: 10px;
+            font-family: monospace;
+        }
+
+        .buttun {
+            width: 135px;
+            height: 40px;
+            border: 2px white;
+            font-size: xx-large;
+            color: #ffffff;
+            background-color: #000000;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function mouseOver(id) {
+            document.getElementById(id).style.color = '#000000';
+            document.getElementById(id).style.background = '#ffa700';
+        }
+        function mouseOut(id) {
+            document.getElementById(id).style.color = '#ffffff';
+            document.getElementById(id).style.background = '#000000';
+        }
+    </script>
+</head>
+<body style="background-color : #000000">
+    <div class="header_out">
+        <div class="header_in">
+            <b class="white">temperature</b> <b class="orange">&nbsp;measurement&nbsp;</b>
+        </div>
+    </div>
+    <div class="header_out">
+        <div class="header_in">
+            <input id="Button1" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" class="buttun" type="button" value="Diagram" /><input id="Button2" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" class="buttun" type="button" value="Table" /><input id="Button3" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" class="buttun" type="button" value="Sign Up" /><input id="Button4" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" class="buttun" type="button" value="Control" /><input id="Button5" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" class="buttun" type="button" value="About" />
+        </div>
+    </div>
+    <script>
+        
+        //$(function () {
+            //function re_stand() {
+            //    //重新站立
+            //    document.getElementById("act_now").src = " https://i.imgur.com/EKRaj3H.png";
+            //    is_move = false;
+            //}
+            //var is_move = false;
+            //$('#buttun1').focus();
+            // Start the connection.
+            //$("#Button2").onmouseover(function (e) {
+            //    // Call the Send method on the hub.
+            //    $("#Button2").style.color = '#000000';
+            //    $("#Button2").style.background = '#ffa700';
+            //});
+            //$(document).keydown(function (e) {
+            //    if (is_move) return;
+            //    switch (e.keyCode) {
+            //    }
+            //});
+        //});
+    </script>
+</body>
+</html>
