@@ -57,9 +57,18 @@
             window.open('https://sites.google.com/gs.ncku.edu.tw/temperature-measurement/' + src);   //跳转
             window.close();
         }
+        function show_control(id) {
+            if (document.getElementById('secret').value === '1234')
+                document.getElementById(id).style.visibility = 'visible';
+            else
+                alert("your password is wrong");
+        }
+        function requestapi() {
+
+        }
     </script>
 </head>
-<body style="background-color : #000000;font-family:'Microsoft YaHei UI'">
+<body style="background-color : #000000" onload="">
     <div class="header_out">
         <div class="header_in" onmousedown="jumpToOther('')">
             <b class="white">temperature</b> <b class="orange">&nbsp;measurement&nbsp;</b>
@@ -71,35 +80,8 @@
             <input id="table" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Table" />
             <input id="sign-up" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Sign Up" />
             <input id="control" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Control" />
-            <input id="about" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="About" />
+            <input id="about" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="About" style="border-bottom:2px #ffa700 solid"/>
         </div>
     </div>
-    <div class="header_out">
-        <div class="header_in">
-            <span style="color:white">這裡放user document 使用說明</span>
-        </div>
-    </div>
-    <script>
-                                    //$(function () {
-                                        //function re_stand() {
-                                        //    //重新站立
-                                        //    document.getElementById("act_now").src = " https://i.imgur.com/EKRaj3H.png";
-                                        //    is_move = false;
-                                        //}
-                                        //var is_move = false;
-                                        //$('#buttun1').focus();
-                                        // Start the connection.
-                                        //$("#Button2").onmouseover(function (e) {
-                                        //    // Call the Send method on the hub.
-                                        //    $("#Button2").style.color = '#000000';
-                                        //    $("#Button2").style.background = '#ffa700';
-                                        //});
-                                        //$(document).keydown(function (e) {
-                                        //    if (is_move) return;
-                                        //    switch (e.keyCode) {
-                                        //    }
-                                        //});
-                                    //});
-    </script>
 </body>
 </html>

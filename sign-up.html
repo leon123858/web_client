@@ -57,9 +57,12 @@
             window.open('https://sites.google.com/gs.ncku.edu.tw/temperature-measurement/' + src);   //跳转
             window.close();
         }
+        function saveReport() {
+            jumpToOther('sign - up');
+        }
     </script>
 </head>
-<body style="background-color : #000000;font-family:'Microsoft YaHei UI'">
+<body style="background-color : #000000">
     <div class="header_out">
         <div class="header_in" onmousedown="jumpToOther('')">
             <b class="white">temperature</b> <b class="orange">&nbsp;measurement&nbsp;</b>
@@ -69,37 +72,23 @@
         <div class="header_in" style="font-size:0">
             <input id="diagram" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Diagram" />
             <input id="table" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Table" />
-            <input id="sign-up" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Sign Up" />
+            <input id="sign-up" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Sign Up" style="border-bottom:2px #ffa700 solid" />
             <input id="control" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Control" />
             <input id="about" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="About" />
         </div>
     </div>
-    <div class="header_out">
+    <div class="header_out" style="margin-top:80px;color:white;font-family:'Microsoft YaHei UI'">
         <div class="header_in">
-            <span style="color:white">這裡放user document 使用說明</span>
+            <span>用戶註冊</span>
+            <form id="showDataForm" action="https://reqres.in/api/users" method="post" onsubmit="saveReport();">
+                <input id="Text1" type="text" style="font-size:x-large" placeholder="請填入你的學號" required="required" />
+                <br />
+                <input id="Text1" type="text" style="font-size:x-large" placeholder="請填入你的姓名" required="required" />
+                <br />
+                <input id="Text1" type="text" style="font-size:x-large" placeholder="請填入你的科系" required="required" />
+                <input id="Submit1" type="submit" value="Websubmit" style="width:300px; height:50px" />
+            </form>
         </div>
     </div>
-    <script>
-                                    //$(function () {
-                                        //function re_stand() {
-                                        //    //重新站立
-                                        //    document.getElementById("act_now").src = " https://i.imgur.com/EKRaj3H.png";
-                                        //    is_move = false;
-                                        //}
-                                        //var is_move = false;
-                                        //$('#buttun1').focus();
-                                        // Start the connection.
-                                        //$("#Button2").onmouseover(function (e) {
-                                        //    // Call the Send method on the hub.
-                                        //    $("#Button2").style.color = '#000000';
-                                        //    $("#Button2").style.background = '#ffa700';
-                                        //});
-                                        //$(document).keydown(function (e) {
-                                        //    if (is_move) return;
-                                        //    switch (e.keyCode) {
-                                        //    }
-                                        //});
-                                    //});
-    </script>
 </body>
 </html>
