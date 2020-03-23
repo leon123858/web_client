@@ -5,6 +5,30 @@
     <meta charset="utf-8" />
     <title>體溫門禁系統</title>
     <style type="text/css">
+        @media(min-width: 100px) {
+            .hide{
+                visibility:hidden;
+            }
+            .marge{
+                margin-top:-150px;
+                margin-left:150px;
+            }
+            .document{
+                font-size:10px;
+            }
+        }
+        @media(min-width: 700px) {
+            .hide{
+                visibility:visible;
+            }
+            .marge{
+                margin-top:110px;
+                margin-left:0px;
+            }
+            .document{
+                font-size:xx-large;
+            }
+        }
         .header_in {
             font-size: 50px;
             width: 675px;
@@ -54,7 +78,7 @@
             document.getElementById(id).style.background = '#000000';
         }
         function jumpToOther(src) {
-            window.open('https://sites.google.com/gs.ncku.edu.tw/temperature-measurement/' + src);   //跳转
+            window.open('https://sites.google.com/gs.ncku.edu.tw/temperature-measurement/' + src, 'temperature');   //跳转
             window.close();
         }
         function build_table() {
@@ -71,36 +95,40 @@
     </script>
 </head>
 <body style="background-color : #000000" onload="build_table()">
-    <div class="header_out">
-        <div class="header_in" onmousedown="jumpToOther('')">
-            <b class="white">temperature</b> <b class="orange">&nbsp;measurement&nbsp;</b>
+    <div class="hide">
+        <div class="header_out">
+            <div class="header_in" onmousedown="jumpToOther('')">
+                <b class="white">temperature</b> <b class="orange">&nbsp;measurement&nbsp;</b>
+            </div>
+        </div>
+        <div class="header_out">
+            <div class="header_in" style="font-size:0">
+                <input id="diagram" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Diagram" />
+                <input id="table" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Table" style="border-bottom:2px #ffa700 solid" />
+                <input id="sign-up" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Sign Up" />
+                <input id="control" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Control" />
+                <input id="about" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="About" />
+            </div>
         </div>
     </div>
-    <div class="header_out">
-        <div class="header_in" style="font-size:0">
-            <input id="diagram" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Diagram" />
-            <input id="table" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Table" style="border-bottom:2px #ffa700 solid"/>
-            <input id="sign-up" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Sign Up" />
-            <input id="control" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="Control" />
-            <input id="about" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="jumpToOther('/首頁/'+this.id)" class="buttun" type="button" value="About" />
-        </div>
-    </div>
-    <div class="header_out" style="margin-top:100px">
-        <div class="header_in">
-            <table style="width:100%; color:white; margin-left:15px; font-family:'Microsoft YaHei UI'">
-                <tr>
-                    <td></td>
-                    <td>總人數</td>
-                    <td>發燒數</td>
-                    <td>違規數</td>
-                </tr>
-                <tr id="first_day">
-                </tr>
-                <tr id="second_day">
-                </tr>
-                <tr id="third_day">
-                </tr>
-            </table>
+    <div class="marge">
+        <div class="header_out" style="margin-top:100px">
+            <div class="header_in">
+                <table style="width:100%; color:white; font-family:'Microsoft YaHei UI'">
+                    <tr>
+                        <td></td>
+                        <td>總人數</td>
+                        <td>發燒數</td>
+                        <td>違規數</td>
+                    </tr>
+                    <tr id="first_day">
+                    </tr>
+                    <tr id="second_day">
+                    </tr>
+                    <tr id="third_day">
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
