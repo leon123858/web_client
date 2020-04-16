@@ -138,12 +138,13 @@
             window.close();
         }
         function show_control(id) {
-            var code = compile(document.getElementById('secret').value);
+            //var code = compile(document.getElementById('secret').value);
+			//var code2 = compile(document.getElementById('username').value);
             //var code = document.getElementById('secret').value;
-            if (code === '12341240.025390625')
-                document.getElementById(id).style.visibility = 'visible';
-            else
-                alert("密碼錯誤, 請重新輸入 謝謝!");
+            //if (code !== NULL && code2 !== NULL )
+            document.getElementById(id).style.visibility = 'visible';
+            //else
+                //alert("請輸入帳號密碼 謝謝!");
         }
         function requestapi() {
 
@@ -170,12 +171,17 @@
     <div class="margin">
         <div class="header_out" style="font-family:'Microsoft YaHei UI'; ">
             <div class="header_in">
-                <span style="color:white">遠端控制server</span>
-                <p style="color:white; " class="downword">工程師專區:<input id="secret" type="password" placeholder="請填入工程師密碼" required="required" class="password" /><input id="Button_in" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="show_control('block')" class="buttun" value="confirm" style="margin-left:5px" /></p>
+                
+                <span style="color:white; " class="password">工程師專區:</span>
+				<br />
+				<input id="username" type="text" placeholder="請填入工程師帳號" required="required" class="password" />
+				<br />
+				<input id="secret" type="password" placeholder="請填入工程師密碼" required="required" class="password" />
+				<br />
+				<input id="Button_in" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="show_control('block')" class="buttun" value="confirm" style="margin-left:5px" />
                 <div id="block" style="font-size:x-large;font-family:'Microsoft YaHei UI';color:white;visibility:hidden">
-                    <input id="Button1" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="requestapi()" class="buttun" value="使用" style="font-family:'Microsoft YaHei UI';" /><span class="downword">關閉遠端server</span>
-                    <br />
-                    <input id="Button2" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="requestapi()" class="buttun" value="使用" style="font-family:'Microsoft YaHei UI';" /><span class="downword">開啟遠端server</span>
+                    <input id="Button1" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="requestapi()" class="buttun" value="使用" style="font-family:'Microsoft YaHei UI';" /><span class="downword">搜尋學生訊息</span>
+					<span>學生ID</span><input id="studentID" type="text" class="downword" />
                     <br />
                     <input id="Button3" type="button" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)" onmousedown="requestapi()" class="buttun" value="使用" style="font-family:'Microsoft YaHei UI';" /><span class="downword">自行編寫api</span>
                     <input id="selfapi" type="text" class="downword" />
